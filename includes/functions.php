@@ -74,7 +74,7 @@ function login()
 			$_SESSION['stock']['loggedIn'] = true;
 			$_SESSION['stock']['role'] = $user['role'];
 			$_SESSION['stock']['user'] = $user['id'];
-			redirect('home.php');
+			redirect('dashboard.php');
 		} else {
 			$error = "Incorrect password";
 		}

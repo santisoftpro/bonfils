@@ -1,3 +1,8 @@
+<?php
+require 'includes/conn.php';
+loggedIn();
+bills();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,39 +34,9 @@
 
 <div class="main-wrapper">
 
-<div class="header">
-
-<div class="header-left active">
-<a href="index.html" class="logo">
-<img src="assets/img/logo.png" alt="">
-</a>
-<a href="index.html" class="logo-small">
-<img src="assets/img/logo-small.png" alt="">
-</a>
-<a id="toggle_btn" href="javascript:void(0);">
-</a>
-</div>
-
-<a id="mobile_btn" class="mobile_btn" href="#sidebar">
-<span class="bar-icon">
-<span></span>
-<span></span>
-<span></span>
-</span>
-</a>
-
-
-
-<div class="dropdown mobile-user-menu">
-<a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-<div class="dropdown-menu dropdown-menu-right">
-<a class="dropdown-item" href="profile.html">My Profile</a>
-<a class="dropdown-item" href="generalsettings.html">Settings</a>
-<a class="dropdown-item" href="signin.html">Logout</a>
-</div>
-</div>
-
-</div>
+<?php 
+include './includes/head.php';
+?>
 
 
 <div class="sidebar" id="sidebar">
@@ -69,12 +44,12 @@
 <div id="sidebar-menu" class="sidebar-menu">
 <ul>
 <li class="active">
-<a href="index.html"><img src="assets/img/icons/dashboard.svg" alt="img"><span> Dashboard</span> </a>
+<a href="dashboard.php"><img src="assets/img/icons/dashboard.svg" alt="img"><span> Dashboard</span> </a>
 </li>
 <li class="submenu">
 <a href="javascript:void(0);"><img src="assets/img/icons/product.svg" alt="img"><span>Stock</span> <span class="menu-arrow"></span></a>
 <ul>
-<li><a href="productlist.html">Stock List</a></li>
+<li><a href="stock.php">Stock List</a></li>
 <li><a href="addproduct.html">New Stock</a></li>
 <li><a href="addpurchase.html">Add Stock</a></li>
 </ul>
