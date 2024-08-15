@@ -51,7 +51,7 @@ include './includes/head.php';
     <a href="javascript:void(0);"><img src="assets/img/icons/product.svg" alt="img"><span>Stock</span> <span class="menu-arrow"></span></a>
     <ul>
     <li><a href="stock.php" class="active">Stock List</a></li>
-    <li><a href="addproduct.html">New Stock</a></li>
+    <li><a href="new_stock.php">New Stock</a></li>
     <li><a href="addpurchase.html">Add Stock</a></li>
     </ul>
     </li>
@@ -236,12 +236,16 @@ $totals = $totals + $row['total'];
 <td> <?php echo $row['sell']; ?></td>
 <td><?php echo $row['total']; ?></td>
 <td>
-<a class="me-3" href="update_stock.php">
+<?php if ($_SESSION['stock']['role'] == 'admin') { ?>
+<a class="me-3" href="update_stock.php?bill_id=<?= $row['stock_id'] ?>">
 <img src="assets/img/icons/edit.svg" alt="img">
 </a>
-<a class="confirm-text" href="javascript:void(0);">
+<button type="button" class="confirm-delete" value="<?= $row['stock_id'] ?>" style="border: none;">
+<!-- <a class="confirm-text confirm-delete" href="javascript:void(0);"> -->
 <img src="assets/img/icons/delete.svg" alt="img">
 </a>
+</button>
+<?php } ?>
 </td>
 </tr>
 

@@ -98,8 +98,8 @@
     <li class="submenu">
     <a href="javascript:void(0);"><img src="assets/img/icons/product.svg" alt="img"><span>Stock</span> <span class="menu-arrow"></span></a>
     <ul>
-    <li><a href="productlist.html">Stock List</a></li>
-    <li><a href="addproduct.html" class="active">New Stock</a></li>
+    <li><a href="stock.php">Stock List</a></li>
+    <li><a href="new_stock.php" class="active">New Stock</a></li>
     <li><a href="addpurchase.html">Add Stock</a></li>
     </ul>
     </li>
@@ -150,41 +150,49 @@
 <div class="card-body">
 <div class="row">
 <div class="col-lg-3 col-sm-6 col-12">
+<form action="" method="post">
 <div class="form-group">
-<label>Supplier Name*</label>
-<input type="text" placeholder="Supplier Name">
+<label>SUPPLIER NAME*</label>
+<input type="text" name="supplier[]" placeholder="Enter Supplier Name">
 </div>
+</form>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
-<label>Category</label>
-<input type="text" placeholder="Category*">
+<label>ITEM NAME</label>
+<input type="text" name="items[]" placeholder="Enter Item Name">
 </div>
 </div>
 
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
-<label>Iten Name</label>
-<input type="text" placeholder="Item Name">
+<label>CATEGORY*</label>
+<input type="text" name="category[]" placeholder="Item Name">
 </div>
 </div>
 
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
-<label>Stock Quantity</label>
-<input type="text">
+<label>MIN STOCK QUANTITY*</label>
+<input type="text" name="minquantuty[]" placeholder="Enter MIN STOCK">
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
-<label>Purchase Price</label>
-<input type="text" placeholder="Purchase Price">
+<label>STOCK QUANTITY*</label>
+<input type="text" name="quantity[]" placeholder="Enter Stock Quantity">
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
-<label>Sales Price</label>
-<input type="text" placeholder="Enter sales price">
+<label>Purchase Price*</label>
+<input type="text" name="cost[]" placeholder="Purchase Price">
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>Sales Price*</label>
+<input type="text" name="sell[]" placeholder="Enter sales price">
 </div>
 </div>
 
