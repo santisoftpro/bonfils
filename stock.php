@@ -96,7 +96,7 @@ include './includes/head.php';
 <h6>Manage your stock</h6>
 </div>
 <div class="page-btn">
-<a href="addproduct.html" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Add New Product</a>
+<a href="new_stock.php" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Add New Product</a>
 </div>
 </div>
 
