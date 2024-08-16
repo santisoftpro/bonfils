@@ -52,7 +52,7 @@ include './includes/head.php';
     <ul>
     <li><a href="stock.php" class="active">Stock List</a></li>
     <li><a href="new_stock.php">New Stock</a></li>
-    <li><a href="addpurchase.html">Add Stock</a></li>
+    <li><a href="add-purchase.php">Add Stock</a></li>
     </ul>
     </li>
     <li class="submenu">

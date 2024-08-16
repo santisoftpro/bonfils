@@ -166,7 +166,7 @@ $items = getAll('items');
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>ITEM NAME</label>
-<input type="text" name="items[]" placeholder="Enter Item Name" required>
+<input type="text" name="items[]" id="items"  placeholder="Enter Item Name" required>
 </div>
 </div>
 

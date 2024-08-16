@@ -106,6 +106,8 @@ include './includes/head.php';
 <div class="row">
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
+<input type="hidden" name="supplier[]" required placeholder="Enter Suppliear Name"
+                                value="sup">
 <label>Item Name</label>
 <div class="row">
 <div class="col-lg-10 col-sm-10 col-10">
@@ -126,12 +128,19 @@ include './includes/head.php';
 </div>
 </div>
 </div>
-
+<input type="hidden" name="category[]" placeholder="Enter The Category" value="cate">
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Quantity</label>
 <input type="number" name="quantity[]" placeholder="Enter The Quantity" required>
 </div>
+</div>
+<input type="hidden" name="minquantuty[]" placeholder="Enter The Quantity" value="5">
+<input type="hidden" name="cost[]" placeholder="Enter The Cost" value="3">
+<input type="hidden" name="sell[]" placeholder="Enter The Cost" value="0">
+<div class="col-lg-12">
+    <button type="submit" name="purchasebtn" class="btn btn-submit me-2">ADD STOCK</button>
+<a href="stock.php" class="btn btn-cancel">Cancel</a>
 </div>
 </div>
 </form>
