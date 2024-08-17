@@ -7,7 +7,7 @@
 <meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
 <meta name="author" content="Dreamguys - Bootstrap Admin Template">
 <meta name="robots" content="noindex, nofollow">
-<title>Add new Sale</title>
+<title>New Bill</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.jpg">
 
@@ -69,16 +69,16 @@
     <li class="submenu">
     <a href="javascript:void(0);"><img src="assets/img/icons/product.svg" alt="img"><span>Stock</span> <span class="menu-arrow"></span></a>
     <ul>
-    <li><a href="productlist.html">Stock List</a></li>
-    <li><a href="addproduct.html">New Stock</a></li>
-    <li><a href="addpurchase.html">Add Stock</a></li>
+    <li><a href="stock.php">Stock List</a></li>
+    <li><a href="new_stock.php">New Stock</a></li>
+    <li><a href="add_purchase.php">Add Stock</a></li>
     </ul>
     </li>
     <li class="submenu">
     <a href="javascript:void(0);"><img src="assets/img/icons/sales1.svg" alt="img"><span> Sales</span> <span class="menu-arrow"></span></a>
     <ul>
-    <li><a href="saleslist.html">Sales List</a></li>
-    <li><a href="add-sales.html" class="active">New Sales</a></li>
+    <li><a href="bills.php">Sales List</a></li>
+    <li><a href="new_bill.php" class="active">New Sales</a></li>
     
     </ul>
     </li>

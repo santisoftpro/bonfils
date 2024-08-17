@@ -58,8 +58,8 @@ include './includes/head.php';
     <li class="submenu">
     <a href="javascript:void(0);"><img src="assets/img/icons/sales1.svg" alt="img"><span> Sales</span> <span class="menu-arrow"></span></a>
     <ul>
-    <li><a href="saleslist.html">Sales List</a></li>
-    <li><a href="add-sales.html">New Sales</a></li>
+    <li><a href="bills.php">Sales List</a></li>
+    <li><a href="new_bill.php">New Sales</a></li>
     
     </ul>
     </li>
