@@ -88,7 +88,7 @@ bills();
     <div id="sidebar-menu" class="sidebar-menu">
     <ul>
     <li>
-    <a href="index.html"><img src="assets/img/icons/dashboard.svg" alt="img"><span> Dashboard</span> </a>
+    <a href="dashboard.php"><img src="assets/img/icons/dashboard.svg" alt="img"><span> Dashboard</span> </a>
     </li>
     <li class="submenu">
     <a href="javascript:void(0);"><img src="assets/img/icons/product.svg" alt="img"><span>Stock</span> <span class="menu-arrow"></span></a>

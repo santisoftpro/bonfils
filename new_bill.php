@@ -1,5 +1,6 @@
 <?php
 require 'includes/conn.php';
+error_reporting(0);
 loggedIn();
 $items = getAll('items');
 ?>
@@ -116,7 +117,7 @@ $items = getAll('items');
                             <div class="col-lg-3 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>Customer</label>
-                                    <input type="text" name="customer_name" placeholder="Enter Customer Name" required>
+                                    <input type="text" name="client" placeholder="Enter Customer Name" required>
                                 </div>
                             </div>
 

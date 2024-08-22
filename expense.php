@@ -139,7 +139,7 @@
 <h6>Manage your purchases</h6>
 </div>
 <div class="page-btn">
-<a href="createexpense.html" class="btn btn-added"><img src="assets/img/icons/plus.svg" class="me-2" alt="img">Add New Expense</a>
+<a href="new_expense.php" class="btn btn-added"><img src="assets/img/icons/plus.svg" class="me-2" alt="img">Add New Expense</a>
 </div>
 </div>
 
@@ -180,7 +180,7 @@
 <div class="col-lg-2 col-sm-6 col-12">
 <div class="form-group">
 <div class="input-groupicon">
-<input type="text" class="datetimepicker cal-icon" placeholder="Choose Date">
+<input type="date" name="date1" class="datetimepicker cal-icon" placeholder="From">
 <div class="addonset">
 <img src="assets/img/icons/calendars.svg" alt="img">
 </div>
@@ -189,29 +189,19 @@
 </div>
 <div class="col-lg-2 col-sm-6 col-12">
 <div class="form-group">
-<input type="text" placeholder="Enter Reference">
+<div class="input-groupicon">
+<input type="text" name="date2" class="datetimepicker cal-icon" placeholder="To">
+<div class="addonset">
+<img src="assets/img/icons/calendars.svg" alt="img">
 </div>
 </div>
-<div class="col-lg-2 col-sm-6 col-12">
-<div class="form-group">
-<select class="select">
-<option>Choose Category</option>
-<option>Computers</option>
-</select>
 </div>
 </div>
-<div class="col-lg-2 col-sm-6 col-12">
-<div class="form-group">
-<select class="select">
-<option>Choose Status</option>
-<option>Complete</option>
-<option>Inprogress</option>
-</select>
-</div>
-</div>
+
 <div class="col-lg-1 col-sm-6 col-12 ms-auto">
 <div class="form-group">
-<a class="btn btn-filters ms-auto"><img src="assets/img/icons/search-whites.svg" alt="img"></a>
+<button type="submit" name="submites" class="btn btn-filters ms-auto"><img src="assets/img/icons/search-whites.svg" alt="img"></button>
+
 </div>
 </div>
 </div>
