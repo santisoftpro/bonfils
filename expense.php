@@ -1,3 +1,9 @@
+<?php
+require 'includes/conn.php';
+loggedIn();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -173,14 +179,14 @@
 </ul>
 </div>
 </div>
-
+<form action="expense.php" method="post" class="change-date">
 <div class="card" id="filter_inputs">
 <div class="card-body pb-0">
 <div class="row">
 <div class="col-lg-2 col-sm-6 col-12">
 <div class="form-group">
 <div class="input-groupicon">
-<input type="date" name="date1" class="datetimepicker cal-icon" placeholder="From">
+<input type="date" name="date1" class="cal-icon" placeholder="From">
 <div class="addonset">
 <img src="assets/img/icons/calendars.svg" alt="img">
 </div>
@@ -190,7 +196,7 @@
 <div class="col-lg-2 col-sm-6 col-12">
 <div class="form-group">
 <div class="input-groupicon">
-<input type="text" name="date2" class="datetimepicker cal-icon" placeholder="To">
+<input type="date" name="date2" class="cal-icon" placeholder="To">
 <div class="addonset">
 <img src="assets/img/icons/calendars.svg" alt="img">
 </div>
@@ -207,8 +213,11 @@
 </div>
 </div>
 </div>
-
+</form>
 <div class="table-responsive">
+<?php
+if (isset($_POST['submites'])) {
+    ?>
  <table class="table  datanew">
 <thead>
 <tr>
@@ -218,14 +227,24 @@
 <span class="checkmarks"></span>
 </label>
 </th>
-<th>Category name</th>
 <th>Date</th>
 <th>Amount</th>
 <th>Description</th>
 <th>Action</th>
 </tr>
 </thead>
+
 <tbody>
+<?php
+$x = 1;
+$totals = 0;
+$query = "SELECT * FROM expense WHERE (dates>='$_POST[date1]' && dates <='$_POST[date2]') ORDER BY expense_id DESC";
+$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+while ($row = mysqli_fetch_assoc($result)) {
+
+$totals = $totals + $row['amount'];
+
+?>   
 <tr>
 <td>
 <label class="checkboxs">
@@ -233,22 +252,104 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<td>Employee Benefits</td>
-<td>19 Nov 2022</td>
-<td>120</td>
-<td>Employee Vehicle</td>
+<td> <?php echo $row['dates']; ?></td>
+<td><?php echo $row['amount']; ?></td>
+<td> <?php echo $row['description']; ?></td>
 <td>
-<a class="me-3" href="editexpense.html">
+<?php if ($_SESSION['stock']['role'] == 'admin') { ?>
+<a class="me-3" href="update_expanse.php?bill_id=<?= $row['expense_id'] ?>">
 <img src="assets/img/icons/edit.svg" alt="img">
 </a>
-<a class="me-3 confirm-text" href="javascript:void(0);">
+<a class="me-3 confirm-text" href="expansei_code.php?delete_bill_id=<?= $row['expense_id'] ?>">
 <img src="assets/img/icons/delete.svg" alt="img">
 </a>
+<?php } ?>
+</td>
+
+</tr>
+<?php
+}
+?>
+</tbody>
+
+</table>
+<?php if ($_SESSION['stock']['role'] == 'admin') { ?>
+                        <div class="pad-big centered">
+                            <strong>TOTAL FRW:
+                                <?= $totals ?>
+                            </strong>
+                        </div>
+                    <?php } ?>
+<?php
+} else {
+
+    ?>
+ <table class="table  datanew">
+<thead>
+<tr>
+<th>
+<label class="checkboxs">
+<input type="checkbox" id="select-all">
+<span class="checkmarks"></span>
+</label>
+</th>
+<th>Date</th>
+<th>Amount</th>
+<th>Description</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<?php
+$x = 1;
+$totals = 0;
+$query = "SELECT * FROM expense ORDER BY expense_id DESC";
+$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+while ($row = mysqli_fetch_assoc($result)) {
+
+$totals = $totals + $row['amount'];
+
+?> 
+<tr>
+<td>
+<label class="checkboxs">
+<input type="checkbox">
+<span class="checkmarks"></span>
+</label>
+</td>
+
+<td> <?php echo $row['dates']; ?></td>
+<td> <?php echo $row['amount']; ?></td>
+<td> <?php echo $row['description']; ?></td>
+<td>
+<?php if ($_SESSION['stock']['role'] == 'admin') { ?>
+
+<a class="me-3" href="update_expanse.php?bill_id=<?= $row['expense_id'] ?>">
+<img src="assets/img/icons/edit.svg" alt="img">
+</a>
+<a class="me-3" href="expansei_code.php?delete_bill_id=<?= $row['expense_id'] ?>">
+<img src="assets/img/icons/delete.svg" alt="img">
+</a>
+<?php } ?>
 </td>
 </tr>
-
+<?php
+}
+?>
 </tbody>
+
 </table>
+<?php if ($_SESSION['stock']['role'] == 'admin') { ?>
+                        <div class="pad-big centered">
+                            <strong>TOTAL FRW:
+                                <?= $totals ?>
+                            </strong>
+                        </div>
+                    <?php } ?>
+<?php
+    }
+
+    ?>
 </div>
 </div>
 </div>
