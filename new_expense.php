@@ -1,3 +1,8 @@
+<button?php
+require 'includes/conn.php';
+loggedIn();
+$items = getAll('items');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,20 +139,16 @@
 <h6>Add/Update Expenses</h6>
 </div>
 </div>
+<form action="expansei_code.php" method="post">
 <div class="card">
 <div class="card-body">
 <div class="row">
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Expense Category</label>
-<input type="text" placeholder="Enter The Category">
-</div>
-</div>
+
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Amount</label>
 <div class="input-groupicon">
-<input type="text">
+<input type="number" name="amount">
 <div class="addonset">
 <img src="assets/img/icons/dollar.svg" alt="img">
 </div>
@@ -158,16 +159,17 @@
 <div class="col-lg-12">
 <div class="form-group">
 <label>Description</label>
-<textarea class="form-control"></textarea>
+<textarea class="form-control" name="description"></textarea>
 </div>
 </div>
 <div class="col-lg-12">
-<a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-<a href="expenselist.html" class="btn btn-cancel">Cancel</a>
+<button type="submit" name="new_expanse" class="btn btn-submit me-2">Submit</button>
+<a href="expense.php" class="btn btn-cancel">Cancel</a>
 </div>
 </div>
 </div>
 </div>
+</form>
 </div>
 </div>
 </div>
