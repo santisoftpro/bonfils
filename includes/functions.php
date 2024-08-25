@@ -74,7 +74,7 @@ function login()
 			$_SESSION['stock']['loggedIn'] = true;
 			$_SESSION['stock']['role'] = $user['role'];
 			$_SESSION['stock']['user'] = $user['id'];
-			redirect('dashboard.php');
+			redirect('home.php');
 		} else {
 			$error = "Incorrect password";
 		}
@@ -177,7 +177,8 @@ function new_bill()
 				$report_query_run = mysqli_query($conn, $report_query);
 				// $cout = mysqli_num_rows($report_query_run);
 				// if ($cout == 0) {
-				$profit_amount = $sticky['cost'] * $quant;
+				$profit_amount = $quant * ($cost - $sticky['cost']);
+	
 				mysqli_query($conn, "INSERT INTO report VALUES(null,'$item','$cost','$sticky[cost]','$quant','$profit_amount',current_timestamp(),'$bill_id')");
 				// } else {
 				// 	$report_update = "UPDATE report SET quantity=qunatity+$quant WHERE dates='$dates'";
