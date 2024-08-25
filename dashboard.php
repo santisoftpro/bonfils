@@ -109,7 +109,12 @@ include './includes/head.php';
 <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
 </div>
 <div class="dash-widgetcontent">
-<h5>$<span class="counters" data-count="307144.00">$307,144.00</span></h5>
+<?php 
+        $query = "SELECT SUM((quantity*cost)) AS total FROM `purchase` WHERE 1";
+        $result = mysqli_query($conn,$query);
+        $row = mysqli_fetch_array($result);
+    ?>
+<h5>RWF <span class="counters" data-count="<?=$row['total']; ?>"></span></h5>
 <h6>Total Purchase Due</h6>
 </div>
 </div>
@@ -120,8 +125,13 @@ include './includes/head.php';
 <span><img src="assets/img/icons/dash2.svg" alt="img"></span>
 </div>
 <div class="dash-widgetcontent">
-<h5>$<span class="counters" data-count="4385.00">$4,385.00</span></h5>
-<h6>Total Sales Due</h6>
+<?php 
+        $query1 = "SELECT SUM(amount) AS expenseAmount FROM `expense` WHERE 1";
+        $expense = mysqli_query($conn,$query1);
+        $expenseAmount = mysqli_fetch_array($expense);
+    ?>
+<h5>RWF <span class="counters" data-count="<?= $expenseAmount['expenseAmount']; ?>"></span></h5>
+<h6>Total Expense</h6>
 </div>
 </div>
 </div>
@@ -131,7 +141,12 @@ include './includes/head.php';
 <span><img src="assets/img/icons/dash3.svg" alt="img"></span>
 </div>
 <div class="dash-widgetcontent">
-<h5>$<span class="counters" data-count="385656.50">385,656.50</span></h5>
+<?php 
+        $query2 = "SELECT SUM(profit_amount) AS profit FROM `report` WHERE 1";
+        $profit = mysqli_query($conn,$query2);
+        $profitAmount = mysqli_fetch_array($profit);
+    ?>
+<h5>RWF <span class="counters" data-count="<?= $profitAmount['profit'] ?>"></span></h5>
 <h6>Total Sale Amount</h6>
 </div>
 </div>
@@ -142,7 +157,12 @@ include './includes/head.php';
 <span><img src="assets/img/icons/dash4.svg" alt="img"></span>
 </div>
 <div class="dash-widgetcontent">
-<h5>$<span class="counters" data-count="40000.00">400.00</span></h5>
+<?php 
+        $query3 = "SELECT SUM(quantity*cost) AS totalSales FROM `bill_items` WHERE 1";
+        $sales = mysqli_query($conn,$query3);
+        $totalSales = mysqli_fetch_array($sales);
+    ?>
+<h5>RWF <span class="counters" data-count="<?=$totalSales['totalSales'] ?>"></span></h5>
 <h6>Total Sale Amount</h6>
 </div>
 </div>
@@ -152,8 +172,15 @@ include './includes/head.php';
 <div class="dash-count das1">
 <div class="dash-counts">
 <h4>Today</h4>
-<h5>Sell:</h5>
-<h5>Buy:</h5>
+<?php 
+$query4 = "SELECT SUM(quantity * cost) AS dayTotal
+FROM `bill_items`
+WHERE DATE(dateon) = CURDATE();
+";
+$today = mysqli_query($conn,$query4);
+$dayTotal = mysqli_fetch_array($today);
+?>
+<h5><b>Sell:</b> RWF <?=number_format($dayTotal['dayTotal'])?></h5>
 </div>
 <div class="dash-imgs">
 <i data-feather="user-check"></i>
@@ -163,9 +190,16 @@ include './includes/head.php';
 <div class="col-lg-3 col-sm-6 col-12 d-flex">
 <div class="dash-count das2">
 <div class="dash-counts">
-<h4>Monthly</h4>
-<h5>Sell:</h5>
-<h5>Buy:</h5>
+<h4>3 Monthly</h4>
+<?php 
+$query5 = "SELECT SUM(quantity * cost) AS monthlyTotal
+FROM `bill_items`
+WHERE dateon >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH);
+";
+$monthly = mysqli_query($conn,$query5);
+$monthlyTotal = mysqli_fetch_array($monthly);
+?>
+<h5><b>Sell:</b> RWF <?=number_format($monthlyTotal['monthlyTotal']) ?></h5>
 </div>
 <div class="dash-imgs">
 <i data-feather="file-text"></i>
