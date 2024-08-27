@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿<?php
+require 'includes/conn.php';
+accoutant()
+    ?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -145,7 +150,7 @@
 <h6>Manage your User</h6>
 </div>
 <div class="page-btn">
-<a href="adduser.html" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img" class="me-2">Add User</a>
+<a href="create_user.php " class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img" class="me-2">Add User</a>
 </div>
 </div>
 
@@ -216,6 +221,11 @@
 </div>
 
 <div class="table-responsive">
+<?php
+                $users = all_users();
+
+                if ($users->num_rows) {
+                    $n = 0; ?>
 <table class="table  datanew">
 <thead>
 <tr>
@@ -225,7 +235,6 @@
 <span class="checkmarks"></span>
 </label>
 </th>
-<th>Profile</th>
 <th>Name</th>
 <th>User name </th>
 <th>Stutus</th>
@@ -233,6 +242,7 @@
 </tr>
 </thead>
 <tbody>
+<?php foreach ($users as $user) { ?>
 <tr>
 <td>
 <label class="checkboxs">
@@ -240,32 +250,29 @@
 <span class="checkmarks"></span>
 </label>
 </td>
-<td class="productimgname">
-<a href="javascript:void(0);" class="product-img">
-<img src="assets/img/customer/customer1.jpg" alt="product">
-</a>
-</td>
-<td>Thomas</td>
-<td>Thomas21 </td>
+
+<td><?= $user['name'] ?></td>
+<td><?= $user['username'] ?> </td>
 
 <td>
 <div class="status-toggle d-flex justify-content-between align-items-center">
-<input type="checkbox" id="user1" class="check">
-<label for="user1" class="checktoggle">checkbox</label>
+<p class="status delivered"><a
+href="bills.php?user_id=<?= $user['id'] ?>">View-User-Report</a></p>
 </div>
 </td>
 <td>
-<a class="me-3" href="edituser.html">
-<img src="assets/img/icons/edit.svg" alt="img">
-</a>
-<a class="me-3 confirm-text" href="javascript:void(0);">
+<a class="me-3" href="users.php?delete_user_id=<?= $user['id'] ?>">
 <img src="assets/img/icons/delete.svg" alt="img">
 </a>
 </td>
 </tr>
-
+<?php } ?>
 </tbody>
 </table>
+
+<?php } else { ?>
+    <p>There is no user yet</p>
+<?php } ?>
 </div>
 </div>
 </div>

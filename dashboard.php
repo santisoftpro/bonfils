@@ -73,8 +73,8 @@ include './includes/head.php';
 <li class="submenu">
 <a href="javascript:void(0);"><img src="assets/img/icons/users1.svg" alt="img"><span> Users</span> <span class="menu-arrow"></span></a>
 <ul>
-<li><a href="users.php">New User </a></li>
-<li><a href="users.php">Users List</a></li>
+<li><a href="user.php">New User </a></li>
+<li><a href="user.php">Users List</a></li>
 </ul>
 </li>
 
@@ -147,7 +147,7 @@ include './includes/head.php';
         $profitAmount = mysqli_fetch_array($profit);
     ?>
 <h5>RWF <span class="counters" data-count="<?= $profitAmount['profit'] ?>"></span></h5>
-<h6>Total Sale Amount</h6>
+<h6>Total Profit Amount</h6>
 </div>
 </div>
 </div>

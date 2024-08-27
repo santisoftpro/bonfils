@@ -1,3 +1,7 @@
+<?php
+require 'includes/conn.php';
+loggedIn()
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,40 +135,40 @@
 <h6>Add/Update User</h6>
 </div>
 </div>
-
+<form action="create_user.php" method="post">
 <div class="card">
 <div class="card-body">
 <div class="row">
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Full Name*</label>
-<input type="text" placeholder="Enter Full Name">
+<input type="text" name="name" placeholder="Enter Full Name">
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>User Name</label>
-<input type="text" placeholder="Enter The UserName">
+<input type="text" name="username" placeholder="Enter The UserName">
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Password</label>
 <div class="pass-group">
-<input type="password" class=" pass-input" placeholder="Enter the password">
+<input type="password" name="password" class=" pass-input" placeholder="Enter the password">
 <span class="fas toggle-password fa-eye-slash"></span>
 </div>
 </div>
 </div>
 
 <div class="col-lg-12">
-<a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-<a href="userlist.html" class="btn btn-cancel">Cancel</a>
+<button class="btn btn-submit me-2" name="new_user">Submit</button>
+<a href="user.php" class="btn btn-cancel">Cancel</a>
 </div>
 </div>
 </div>
 </div>
-
+</form>
 </div>
 </div>
 </div>

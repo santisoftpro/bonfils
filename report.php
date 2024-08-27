@@ -301,11 +301,11 @@ $new += $saledTotalt;
 <?php if ($_SESSION['stock']['role'] == 'admin') { ?>
 <div class="pad-big centered">
 <strong>TOTAL PROFIT FRW:
-    <?= $totals ?>
+    <?= number_format($totals) ?>
 </strong>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <strong>TOTAL SALES:
-    <?= $new ?>
+    <?= number_format($new) ?>
 </strong>
 </div>
 <?php } ?>
@@ -360,11 +360,11 @@ $new += $saledTotalt;
 <?php if ($_SESSION['stock']['role'] == 'admin') { ?>
                         <div class="pad-big centered">
                             <strong>TOTAL PROFIT FRW:
-                                <?= $totals ?>
+                                <?= number_format($totals) ?>
                             </strong>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <strong>TOTAL SALES:
-                                <?= $new ?>
+                                <?= number_format($new) ?>
                             </strong>
                         </div>
                     <?php } ?>
