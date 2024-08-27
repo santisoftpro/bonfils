@@ -119,6 +119,7 @@ loggedIn();
 <div class="sidebar-inner slimscroll">
 <div id="sidebar-menu" class="sidebar-menu">
 <ul>
+<li class="">
 <a href="dashboard.php"><img src="assets/img/icons/dashboard.svg" alt="img"><span> Dashboard</span> </a>
 </li>
 <li class="submenu">
@@ -148,21 +149,19 @@ loggedIn();
 <li class="submenu">
 <a href="javascript:void(0);"><img src="assets/img/icons/users1.svg" alt="img"><span> Users</span> <span class="menu-arrow"></span></a>
 <ul>
-<li><a href="users.php">New User </a></li>
-<li><a href="users.php">Users List</a></li>
+<li><a href="create_user.php">New User </a></li>
+<li><a href="user.php">Users List</a></li>
 </ul>
 </li>
 
 <li class="submenu">
 <a href="javascript:void(0);"><img src="assets/img/icons/time.svg" alt="img"><span> Report</span> <span class="menu-arrow"></span></a>
 <ul>
-<li><a href="purchaseorderreport.html">Purchase order report</a></li>
-<li><a href="inventoryreport.html">Inventory Report</a></li>
 <li><a href="report.php" class="active">Sales Report</a></li>
-<li><a href="invoicereport.html">Invoice Report</a></li>
+<!-- <li><a href="invoicereport.html">Invoice Report</a></li>
 <li><a href="purchasereport.html">Purchase Report</a></li>
 <li><a href="supplierreport.html">Supplier Report</a></li>
- <li><a href="customerreport.html">Customer Report</a></li>
+ <li><a href="customerreport.html">Customer Report</a></li> -->
 </ul>
 </li>
 <li class="submenu">
@@ -174,7 +173,6 @@ loggedIn();
 </div>
 </div>
 </div>
-
 
 <div class="page-wrapper">
 <div class="content">

@@ -81,8 +81,6 @@ include './includes/head.php';
 <li class="submenu">
 <a href="javascript:void(0);"><img src="assets/img/icons/time.svg" alt="img"><span> Report</span> <span class="menu-arrow"></span></a>
 <ul>
-<li><a href="purchaseorderreport.html">Purchase order report</a></li>
-<li><a href="inventoryreport.html">Inventory Report</a></li>
 <li><a href="report.php" class="">Sales Report</a></li>
 <!-- <li><a href="invoicereport.html">Invoice Report</a></li>
 <li><a href="purchasereport.html">Purchase Report</a></li>

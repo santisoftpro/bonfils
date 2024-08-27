@@ -41,52 +41,63 @@ include './includes/head.php';
 ?>
 
 <div class="sidebar" id="sidebar">
-    <div class="sidebar-inner slimscroll">
-    <div id="sidebar-menu" class="sidebar-menu">
-    <ul>
-    <li>
-    <a href="dashboard.php"><img src="assets/img/icons/dashboard.svg" alt="img"><span> Dashboard</span> </a>
-    </li>
-    <li class="submenu">
-    <a href="javascript:void(0);"><img src="assets/img/icons/product.svg" alt="img"><span>Stock</span> <span class="menu-arrow"></span></a>
-    <ul>
-    <li><a href="stock.php" class="active">Stock List</a></li>
-    <li><a href="new_stock.php">New Stock</a></li>
-    <li><a href="add-purchase.php">Add Stock</a></li>
-    </ul>
-    </li>
-    <li class="submenu">
-    <a href="javascript:void(0);"><img src="assets/img/icons/sales1.svg" alt="img"><span> Sales</span> <span class="menu-arrow"></span></a>
-    <ul>
-    <li><a href="bills.php">Sales List</a></li>
-    <li><a href="new_bill.php">New Sales</a></li>
-    
-    </ul>
-    </li>
-    
-    <li class="submenu">
-    <a href="javascript:void(0);"><img src="assets/img/icons/expense1.svg" alt="img"><span> Expense</span> <span class="menu-arrow"></span></a>
-    <ul>
-    <li><a href="expenselist.html">Expense List</a></li>
-    <li><a href="createexpense.html">Add Expense</a></li>
-    </ul>
-    </li>
-    <li class="submenu">
-    <a href="javascript:void(0);"><img src="assets/img/icons/users1.svg" alt="img"><span> Users</span> <span class="menu-arrow"></span></a>
-    <ul>
-    <li><a href="newuser.html">New User </a></li>
-    <li><a href="userlists.html">Users List</a></li>
-    </ul>
-    </li>
-    <li class="submenu">
-    <a href="javascript:void(0);"><img src="assets/img/icons/settings.svg" alt="img"><span>Log Out</span> <span class="menu-arrow"></span></a>
-    
-    
-    </li>
-    </ul>
-    </div>
-    </div>
- </div>
+<div class="sidebar-inner slimscroll">
+<div id="sidebar-menu" class="sidebar-menu">
+<ul>
+<li class="">
+<a href="dashboard.php"><img src="assets/img/icons/dashboard.svg" alt="img"><span> Dashboard</span> </a>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="assets/img/icons/product.svg" alt="img"><span>Stock</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="stock.php" class="active">Stock List</a></li>
+<li><a href="new_stock.php">New Stock</a></li>
+<li><a href="add-purchase.php">Add Stock</a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="assets/img/icons/sales1.svg" alt="img"><span> Sales</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="bills.php">Sales List</a></li>
+<li><a href="new_bill.php">New Sales</a></li>
+
+</ul>
+</li>
+
+<li class="submenu">
+<a href="javascript:void(0);"><img src="assets/img/icons/expense1.svg" alt="img"><span> Expense</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="expense.php">Expense List</a></li>
+<li><a href="new_expense.php">Add Expense</a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="assets/img/icons/users1.svg" alt="img"><span> Users</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="create_user.php">New User </a></li>
+<li><a href="user.php">Users List</a></li>
+</ul>
+</li>
+
+<li class="submenu">
+<a href="javascript:void(0);"><img src="assets/img/icons/time.svg" alt="img"><span> Report</span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="report.php" class="">Sales Report</a></li>
+<!-- <li><a href="invoicereport.html">Invoice Report</a></li>
+<li><a href="purchasereport.html">Purchase Report</a></li>
+<li><a href="supplierreport.html">Supplier Report</a></li>
+ <li><a href="customerreport.html">Customer Report</a></li> -->
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><img src="assets/img/icons/settings.svg" alt="img"><span>Log Out</span> <span class="menu-arrow"></span></a>
+
+
+</li>
+</ul>
+</div>
+</div>
+</div>
 
 <div class="page-wrapper">
 <div class="content">
