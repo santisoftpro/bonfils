@@ -141,14 +141,14 @@ include './includes/head.php';
 </div>
 </div>
 <input type="hidden" name="category[]" placeholder="Enter The Category" value="cate">
-<div class="col-lg-3 col-sm-6 col-12">
+<div class="col-lg-3 col-sm-6 col-12" ><br><br><br><br>
 <div class="form-group">
 <label>Quantity</label>
 <input type="number" name="quantity[]" placeholder="Enter The Quantity" required>
 </div>
 </div>
 <input type="hidden" name="minquantuty[]" placeholder="Enter The Quantity" value="5">
-<inputpe="hidden" name="cost[]" placeholder="Enter The Cost" value="3">
+<input type="hidden" name="cost[]" placeholder="Enter The Cost" value="3">
 <input type="hidden" name="sell[]" placeholder="Enter The Cost" value="0">
 <div class="col-lg-12">
     <button type="submit" name="purchasebtn" class="btn btn-submit me-2">ADD STOCK</button>

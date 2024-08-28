@@ -108,12 +108,12 @@ include './includes/head.php';
 </div>
 <div class="dash-widgetcontent">
 <?php 
-        $query = "SELECT SUM((quantity*cost)) AS total FROM `purchase` WHERE 1";
+        $query = "SELECT SUM((quantity*cost)) AS total FROM `purchase` WHERE dates >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH)";
         $result = mysqli_query($conn,$query);
         $row = mysqli_fetch_array($result);
     ?>
 <h5>RWF <span class="counters" data-count="<?=$row['total']; ?>"></span></h5>
-<h6>Total Purchase Due</h6>
+<h6>3 months Total Purchase</h6>
 </div>
 </div>
 </div>
@@ -124,12 +124,12 @@ include './includes/head.php';
 </div>
 <div class="dash-widgetcontent">
 <?php 
-        $query1 = "SELECT SUM(amount) AS expenseAmount FROM `expense` WHERE 1";
+        $query1 = "SELECT SUM(amount) AS expenseAmount FROM `expense` WHERE dates >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH)";
         $expense = mysqli_query($conn,$query1);
         $expenseAmount = mysqli_fetch_array($expense);
     ?>
 <h5>RWF <span class="counters" data-count="<?= $expenseAmount['expenseAmount']; ?>"></span></h5>
-<h6>Total Expense</h6>
+<h6>3 Months Total Expense</h6>
 </div>
 </div>
 </div>
@@ -140,12 +140,12 @@ include './includes/head.php';
 </div>
 <div class="dash-widgetcontent">
 <?php 
-        $query2 = "SELECT SUM(profit_amount) AS profit FROM `report` WHERE 1";
+        $query2 = "SELECT SUM(profit_amount) AS profit FROM `report` WHERE dates >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH)";
         $profit = mysqli_query($conn,$query2);
         $profitAmount = mysqli_fetch_array($profit);
     ?>
 <h5>RWF <span class="counters" data-count="<?= $profitAmount['profit'] ?>"></span></h5>
-<h6>Total Profit Amount</h6>
+<h6>3 Months Profit Amount</h6>
 </div>
 </div>
 </div>
@@ -156,18 +156,19 @@ include './includes/head.php';
 </div>
 <div class="dash-widgetcontent">
 <?php 
-        $query3 = "SELECT SUM(quantity*cost) AS totalSales FROM `bill_items` WHERE 1";
+        $query3 = "SELECT SUM(quantity*cost) AS totalSales FROM `bill_items` WHERE dateon >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH)";
         $sales = mysqli_query($conn,$query3);
         $totalSales = mysqli_fetch_array($sales);
     ?>
 <h5>RWF <span class="counters" data-count="<?=$totalSales['totalSales'] ?>"></span></h5>
-<h6>Total Sale Amount</h6>
+<h6>3 Months Sale Amount</h6>
 </div>
 </div>
 </div>
 
+ 
 <div class="col-lg-3 col-sm-6 col-12 d-flex">
-<div class="dash-count das1">
+<div class="dash-count das2">
 <div class="dash-counts">
 <h4>Today</h4>
 <?php 
@@ -175,29 +176,18 @@ $query4 = "SELECT SUM(quantity * cost) AS dayTotal
 FROM `bill_items`
 WHERE DATE(dateon) = CURDATE();
 ";
+
 $today = mysqli_query($conn,$query4);
 $dayTotal = mysqli_fetch_array($today);
 ?>
-<h5><b>Sell:</b> RWF <?=number_format($dayTotal['dayTotal'])?></h5>
-</div>
-<div class="dash-imgs">
-<i data-feather="user-check"></i>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12 d-flex">
-<div class="dash-count das2">
-<div class="dash-counts">
-<h4>3 Monthly</h4>
-<?php 
-$query5 = "SELECT SUM(quantity * cost) AS monthlyTotal
-FROM `bill_items`
-WHERE dateon >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH);
-";
-$monthly = mysqli_query($conn,$query5);
-$monthlyTotal = mysqli_fetch_array($monthly);
+<?php
+$query5 = "SELECT SUM((quantity*cost)) AS total FROM `purchase` WHERE DATE(dates) = CURDATE();";
+
+$purchase = mysqli_query($conn,$query5);
+$dayPurchase = mysqli_fetch_array($purchase);
 ?>
-<h5><b>Sell:</b> RWF <?=number_format($monthlyTotal['monthlyTotal']) ?></h5>
+<h5><b>Sell:</b> RWF <?=number_format($dayTotal['dayTotal'])?></h5>
+<h5><b>Buy:</b> RWF <?=number_format($dayPurchase['total'])?></h5>
 </div>
 <div class="dash-imgs">
 <i data-feather="file-text"></i>

@@ -188,16 +188,16 @@ $items = getAll('items');
 </div>
 </div>
 
+<!-- <div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>QUANTITY*</label> -->
+<input type="hidden" name="minquantuty[]" value="0" placeholder="Enter MIN STOCK" required>
+<!-- </div>
+</div> -->
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
-<label>MIN STOCK QUANTITY*</label>
-<input type="text" name="minquantuty[]" placeholder="Enter MIN STOCK" required>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>STOCK QUANTITY*</label>
-<input type="text" name="quantity[]" placeholder="Enter Stock Quantity" required>
+<label>QUANTITY*</label>
+<input type="text" name="quantity[]" placeholder="Enter Quantity" required>
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
@@ -206,12 +206,12 @@ $items = getAll('items');
 <input type="text" name="cost[]" placeholder="Purchase Price" required>
 </div>
 </div>
-<div class="col-lg-3 col-sm-6 col-12">
+<!-- <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
-<label>Sales Price*</label>
-<input type="text" name="sell[]" placeholder="Enter sales price" required>
-</div>
-</div>
+<label>Sales Price*</label> -->
+<input type="hidden" name="sell[]" value="0" placeholder="Enter sales price" required>
+<!-- </div>
+</div> -->
 
 <div class="col-lg-12">
     <button type="submit" name="purchasebtn" class="btn btn-submit me-2">ADD NEW STOCK</button>

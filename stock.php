@@ -128,13 +128,14 @@ include './includes/head.php';
 <div class="wordset">
 <ul>
 <li>
-<a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="assets/img/icons/pdf.svg" alt="img"></a>
+<a id="exportExcel" data-bs-toggle="tooltip" data-bs-placement="top" title="Export to Excel">
+            <img src="assets/img/icons/excel.svg" alt="Export to Excel">
+        </a>
 </li>
 <li>
-<a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="assets/img/icons/excel.svg" alt="img"></a>
-</li>
-<li>
-<a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="assets/img/icons/printer.svg" alt="img"></a>
+<a id="printTable" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Table">
+            <img src="assets/img/icons/printer.svg" alt="Print Table">
+        </a>
 </li>
 </ul>
 </div>
@@ -144,7 +145,7 @@ include './includes/head.php';
 <div class="card-body pb-0">
 <div class="row">
 <div class="col-lg-12 col-sm-12">
-<div class="row">
+<!-- <div class="row">
 <div class="col-lg col-sm-6 col-12">
 <div class="form-group">
 <select class="select">
@@ -192,7 +193,7 @@ include './includes/head.php';
 <a class="btn btn-filters ms-auto"><img src="assets/img/icons/search-whites.svg" alt="img"></a>
 </div>
 </div>
-</div>
+</div> -->
 </div>
 </div>
 </div>
@@ -289,6 +290,8 @@ $totals = $totals + $row['total'];
 
 <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
 <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
 
 <script src="assets/js/script.js"></script>
 
@@ -337,5 +340,23 @@ $totals = $totals + $row['total'];
             subMenu.classList.toggle("open-menu");
         }
     </script>
+
+<script>
+    document.getElementById('exportExcel').addEventListener('click', function() {
+        var table = document.querySelector('.datanew');
+        var wb = XLSX.utils.table_to_book(table, { sheet: "Sheet JS" });
+        XLSX.writeFile(wb, 'stock_data.xlsx');
+    });
+
+    document.getElementById('printTable').addEventListener('click', function() {
+        var printContents = document.querySelector('.table-responsive').innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+        window.location.reload(); // Reload the page to restore the original state
+    });
+</script>
+
 </body>
 </html>

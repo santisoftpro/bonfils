@@ -169,7 +169,20 @@ bills();
 <a class="btn btn-searchset"><img src="assets/img/icons/search-white.svg" alt="img"></a>
 </div>
 </div>
-
+<div class="wordset">
+<ul>
+<li>
+<a id="exportExcel" data-bs-toggle="tooltip" data-bs-placement="top" title="Export to Excel">
+            <img src="assets/img/icons/excel.svg" alt="Export to Excel">
+        </a>
+</li>
+<li>
+<a id="printTable" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Table">
+            <img src="assets/img/icons/printer.svg" alt="Print Table">
+        </a>
+</li>
+</ul>
+</div>
 </div>
 <form action="bills.php" method="get" class="change-date">
 <div class="card" id="filter_inputs">
@@ -306,7 +319,27 @@ $totals += $bill['total']; ?>
 
 <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
 <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
 
 <script src="assets/js/script.js"></script>
+
+<script>
+    document.getElementById('exportExcel').addEventListener('click', function() {
+        var table = document.querySelector('.datanew');
+        var wb = XLSX.utils.table_to_book(table, { sheet: "Sheet JS" });
+        XLSX.writeFile(wb, 'stock_data.xlsx');
+    });
+
+    document.getElementById('printTable').addEventListener('click', function() {
+        var printContents = document.querySelector('.table-responsive').innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+        window.location.reload(); // Reload the page to restore the original state
+    });
+</script>
+
 </body>
 </html>
