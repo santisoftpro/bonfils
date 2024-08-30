@@ -157,11 +157,7 @@ include 'includes/db.php';
  <li><a href="customerreport.html">Customer Report</a></li> -->
 </ul>
 </li>
-<li class="submenu">
-<a href="logout.php"><img src="assets/img/icons/settings.svg" alt="img"><span>Log Out</span> <span class="menu-arrow"></span></a>
 
-
-</li>
 </ul>
 </div>
 </div>

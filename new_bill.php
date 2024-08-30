@@ -38,25 +38,10 @@ $items = getAll('items');
 
 <div class="main-wrapper">
 
-    <div class="header">
-        <div class="header-left active">
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.png" alt="">
-            </a>
-            <a href="index.html" class="logo-small">
-                <img src="assets/img/logo-small.png" alt="">
-            </a>
-            <a id="toggle_btn" href="javascript:void(0);"></a>
-        </div>
+<?php 
+include './includes/head.php';
+?>
 
-        <a id="mobile_btn" class="mobile_btn" href="#sidebar">
-            <span class="bar-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
-        </a>
-    </div>
 
     <div class="sidebar" id="sidebar">
 <div class="sidebar-inner slimscroll">
@@ -107,11 +92,7 @@ $items = getAll('items');
  <li><a href="customerreport.html">Customer Report</a></li> -->
 </ul>
 </li>
-<li class="submenu">
-<a href="logout.php"><img src="assets/img/icons/settings.svg" alt="img"><span>Log Out</span> <span class="menu-arrow"></span></a>
 
-
-</li>
 </ul>
 </div>
 </div>

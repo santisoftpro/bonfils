@@ -39,55 +39,10 @@ loggedIn();
 
 <div class="main-wrapper">
 
-<div class="header">
+<?php 
+include './includes/head.php';
+?>
 
-<div class="header-left active">
-<a href="index.html" class="logo">
-<img src="assets/img/logo.png" alt="">
-</a>
-<a href="index.html" class="logo-small">
-<img src="assets/img/logo-small.png" alt="">
-</a>
-<a id="toggle_btn" href="javascript:void(0);">
-</a>
-</div>
-
-<a id="mobile_btn" class="mobile_btn" href="#sidebar">
-<span class="bar-icon">
-<span></span>
-<span></span>
-<span></span>
-</span>
-</a>
-
-<ul class="nav user-menu">
-
-<li class="nav-item">
-<div class="top-nav-search">
-<a href="javascript:void(0);" class="responsive-search">
-<i class="fa fa-search"></i>
-</a>
-<form action="#">
-<div class="searchinputs">
-<input type="text" placeholder="Search Here ...">
-<div class="search-addon">
-<span><img src="assets/img/icons/closes.svg" alt="img"></span>
-</div>
-</div>
-<a class="btn" id="searchdiv"><img src="assets/img/icons/search.svg" alt="img"></a>
-</form>
-</div>
-</li>
-
-
-
-
-
-
-</ul>
-
-
-</div>
 
 <div class="sidebar" id="sidebar">
 <div class="sidebar-inner slimscroll">
@@ -138,11 +93,7 @@ loggedIn();
  <li><a href="customerreport.html">Customer Report</a></li> -->
 </ul>
 </li>
-<li class="submenu">
-<a href="logout.php"><img src="assets/img/icons/settings.svg" alt="img"><span>Log Out</span> <span class="menu-arrow"></span></a>
 
-
-</li>
 </ul>
 </div>
 </div>
