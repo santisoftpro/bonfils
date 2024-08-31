@@ -88,11 +88,7 @@ include './includes/head.php';
  <li><a href="customerreport.html">Customer Report</a></li> -->
 </ul>
 </li>
-<li class="submenu">
-<a href="logout.php">Log Out</a>
 
-
-</li>
 </ul>
 </div>
 </div>
@@ -188,6 +184,33 @@ $dayPurchase = mysqli_fetch_array($purchase);
 ?>
 <h5><b>Sell:</b> RWF <?=number_format($dayTotal['dayTotal'])?></h5>
 <h5><b>Buy:</b> RWF <?=number_format($dayPurchase['total'])?></h5>
+</div>
+<div class="dash-imgs">
+<i data-feather="file-text"></i>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12 d-flex">
+<div class="dash-count das2">
+<div class="dash-counts">
+<h4>Monthly</h4>
+<?php 
+$query6 = "SELECT SUM(quantity * cost) AS dayTotal
+FROM `bill_items`
+WHERE dateon >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);
+";
+
+$mon = mysqli_query($conn,$query6);
+$monTotal = mysqli_fetch_array($mon);
+?>
+<?php
+$query7 = "SELECT SUM((quantity*cost)) AS total FROM `purchase` WHERE dates >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);";
+
+$monPurc = mysqli_query($conn,$query7);
+$monPurchase = mysqli_fetch_array($monPurc);
+?>
+<h5><b>Sell:</b> RWF <?=number_format($monTotal['dayTotal'])?></h5>
+<h5><b>Buy:</b> RWF <?=number_format($monPurchase['total'])?></h5>
 </div>
 <div class="dash-imgs">
 <i data-feather="file-text"></i>
